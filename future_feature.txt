@@ -1,0 +1,2 @@
+Recycle Bin view for deleted objects using the "is_active" field. 
+Need to add a neww field named "deleted_at: datetime".

@@ -1,0 +1,15 @@
+from enum import Enum
+
+
+class StaffLedgerType(str, Enum):
+    OPENING_BALANCE = "OPENING_BALANCE"
+
+    SERVICE_EARNING = "SERVICE_EARNING"
+
+    MONTHLY_SALARY = "MONTHLY_SALARY"
+
+    BONUS = "BONUS"
+
+    ADJUSTMENT = "ADJUSTMENT"
+
+    PAYMENT = "PAYMENT"

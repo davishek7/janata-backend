@@ -1,0 +1,15 @@
+from enum import Enum
+
+
+class MechanicLedgerType(str, Enum):
+    PRODUCT_TAKEN = "PRODUCT_TAKEN"
+
+    CASH_TAKEN = "CASH_TAKEN"
+
+    LABOUR_EARNED = "LABOUR_EARNED"
+
+    PAYMENT_TO_SHOP = "PAYMENT_TO_SHOP"
+
+    PAYMENT_TO_MECHANIC = "PAYMENT_TO_MECHANIC"
+
+    RENT_CHARGE = "RENT_CHARGE"

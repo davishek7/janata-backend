@@ -1,0 +1,15 @@
+from enum import Enum
+
+
+class WarrantyClaimStatus(str, Enum):
+    PENDING = "PENDING"
+
+    SENT_TO_DEALER = "SENT_TO_DEALER"
+
+    FOC_APPROVED = "FOC_APPROVED"
+
+    PRORATA_APPROVED = "PRORATA_APPROVED"
+
+    GOOD_BATTERY = "GOOD_BATTERY"
+
+    REJECTED = "REJECTED"

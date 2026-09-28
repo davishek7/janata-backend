@@ -1,0 +1,11 @@
+from enum import Enum
+
+
+class PaymentReferenceType(str, Enum):
+    INVOICE = "INVOICE"
+    QUICK_SALE = "QUICK_SALE"
+    SCRAP_PURCHASE = "SCRAP_PURCHASE"
+    SCRAP_SALE = "SCRAP_SALE"
+    VENDOR_LEDGER = "VENDOR_LEDGER"
+    STAFF_LEDGER = "STAFF_LEDGER"
+    MECHANIC_LEDGER = "MECHANIC_LEDGER"

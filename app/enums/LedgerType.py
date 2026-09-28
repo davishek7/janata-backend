@@ -1,0 +1,21 @@
+from enum import Enum
+
+
+class LedgerType(str, Enum):
+    OPENING_BALANCE = "OPENING_BALANCE"
+
+    # Business income
+    CUSTOMER_PAYMENT = "CUSTOMER_PAYMENT"
+    MECHANIC_SETTLEMENT = "MECHANIC_SETTLEMENT"
+
+    # Business expenses
+    SUPPLIER_PAYMENT = "SUPPLIER_PAYMENT"
+    SHOP_EXPENSE = "SHOP_EXPENSE"
+
+    # Scrap movement
+    SCRAP_PURCHASE = "SCRAP_PURCHASE"
+    SCRAP_SALE = "SCRAP_SALE"
+
+    # Owner cash movement
+    OWNER_WITHDRAWAL = "OWNER_WITHDRAWAL"
+    OWNER_DEPOSIT = "OWNER_DEPOSIT"
