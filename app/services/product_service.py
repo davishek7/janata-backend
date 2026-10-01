@@ -11,7 +11,7 @@ from app.schemas.product_schema import (
     ProducDetailsResponse,
     ProductLookupResponse,
     ProductQueryParams,
-    ProductInStockResponse
+    ProductInStockResponse,
 )
 from app.utils.responses import success_response
 from app.schemas.common.pagination_schema import PaginatedResponse, Pagination
@@ -91,8 +91,19 @@ class ProductService:
         return [ProductLookupResponse.from_document(product) for product in products]
 
     async def get_in_stock_serials(self, product_id: PydanticObjectId):
-        product = await Product.find_one(Product.id == product_id, Product.is_active == True, Product.serialized == True)
+        product = await Product.find_one(
+            Product.id == product_id,
+            Product.is_active == True,
+            Product.serialized == True,
+        )
         if not product:
             raise AppException("Product not found.", status.HTTP_404_NOT_FOUND)
-        inventory_items = await InventoryItem.find(InventoryItem.product.id == product.id, InventoryItem.is_active == True, InventoryItem.status == InventoryStatus.IN_STOCK).to_list()
-        return [ProductInStockResponse.from_document(inventory_item) for inventory_item in inventory_items]
+        inventory_items = await InventoryItem.find(
+            InventoryItem.product.id == product.id,
+            InventoryItem.is_active == True,
+            InventoryItem.status == InventoryStatus.IN_STOCK,
+        ).to_list()
+        return [
+            ProductInStockResponse.from_document(inventory_item)
+            for inventory_item in inventory_items
+        ]

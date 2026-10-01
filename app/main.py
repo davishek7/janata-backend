@@ -48,7 +48,9 @@ register_exception_handlers(app=app)
 URL_PREFIX = "/api"
 
 app.include_router(auth_router, prefix=f"{URL_PREFIX}/auth", tags=["Auth"])
-app.include_router(dashboard_router, prefix=f"{URL_PREFIX}/dashboard", tags=["Dashboard"])
+app.include_router(
+    dashboard_router, prefix=f"{URL_PREFIX}/dashboard", tags=["Dashboard"]
+)
 app.include_router(product_router, prefix=f"{URL_PREFIX}/product", tags=["Product"])
 app.include_router(
     scrap_product_router, prefix=f"{URL_PREFIX}/scrap-product", tags=["Scrap Product"]
